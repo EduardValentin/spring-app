@@ -1,0 +1,74 @@
+body {
+	padding: 30px;
+}
+
+.column {
+	padding: 2px;
+	height: 20px;
+	display: inline-block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.spinner {
+	width: 100px;
+	height: 100px;
+}
+
+.header {
+	font-weight: bold;
+}
+
+#participant {
+	width: 150px;
+}
+
+#controls {
+	align-items: center;
+	text-align: center;
+}
+
+#controls input {
+	width: 50px;
+}
+
+#tradetype {
+	width: 100px;
+}
+
+#peaktype {
+	width: 80px;
+}
+
+#hedgetype {
+	width: 100px;
+}
+
+#source {
+	width: 150px;
+}
+
+#sink {
+	width: 150px;
+}
+
+#size {
+	width: 50px;
+	text-align: right;
+}
+
+#cost {
+	width: 100px;
+	text-align: right;
+}
+
+#revenue {
+	width: 100px;
+	text-align: right;
+}
+
+#profit {
+	width: 120px;
+	text-align: right;
+}

@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:13.1
+    volumes: 
+      - "./db/onDBOpen:/docker-entrypoint-initdb.d"
+    environment:
+      - POSTGRES_DB=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  serverside:
+    build:
+      context: ./middletier/.devcontainer
+      dockerfile: Dockerfile
+    command: /bin/bash -c "cd ./middletier;./scripts/watchTomee.sh run"
+    volumes:
+      - "./middletier:/middletier"
+    depends_on:
+      - db
+  frontend:
+    image: node:16
+    command: bash -c "cd /frontend && yarn && yarn start"
+    volumes: 
+      - "./frontend:/frontend"
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - DANGEROUSLY_DISABLE_HOST_CHECK=true
