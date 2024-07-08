@@ -36,6 +36,6 @@ public abstract class TransactionView extends AbstractView {
     }
 
     protected void processAndWriteResult(ArrayList<Object> transactions, HttpServletResponse result) throws IOException {
+        System.out.println("[WARN]: Method processAndWriteResult not implemented");
     }
-
 }
